@@ -1,0 +1,33 @@
+@{
+    Layout = "_Layout";
+}
+@model List<exam.Models.Activity>
+@using exam.Models
+<h2>Dojo Activity Center  </h2>
+<table class="table table-striped">
+    <tr>
+        <th>Activity</th>
+        <th>Date and Time</th>
+        <th>Duration</th>
+        <th>Event Coordinator</th>
+        <th>Number of Participants</th>
+        <th>Action</th>
+    </tr>
+@{
+    foreach(var activity in @Model)
+    {
+
+    
+    <tr>
+        <td><a href="Show/@activity.ActivityId"> @activity.Title</a></td>
+        <td>@activity.Date</td>
+        <td>@activity.Duration</td>
+        <td></td>
+        <td></td>
+        <td><a href="Delete/@activity.ActivityId">Remove From My List</a></td>
+        
+    </tr>
+    }
+}
+</table>
+<button><a href="AddActivity"> Add New Activity</a></button>

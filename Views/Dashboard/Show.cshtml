@@ -1,0 +1,19 @@
+@{
+    Layout = "_Layout";
+}
+<div class="col-md-9">
+    
+    
+    <h4>Event Coordinator : @ViewBag.CreatedByDB.FirstName</h4>
+    <h4>Description : @ViewBag.oneActivity.Description</h4>
+
+    <h4>People going to this activity : </h4>
+    @{
+        foreach(var activity in @ViewBag.getsameactivity){
+            @foreach(var join in @activity.JoiningUser){
+                <li>@join.JoiningUser.FirstName</li>
+            }
+        }
+    }
+</div>
+<button class="btn btn-default"><a href="AddToMyList">Join</a> </button>
